@@ -69,7 +69,8 @@ Du kan även öppna `STARTA_HÄR.html` eller `index.html` direkt i en modern web
 5. Klicka på **"Kasta till skärm"** för presentation eller **"Spara bild"** för att ladda ner resultatet som PNG!
 
 ---
-
+Länk till biblen i 200+ språk och 1000+ versioner i XML format:  
+https://github.com/Beblia/Holy-Bible-XML-Format
 ## 📄 Licens
 
 Detta projekt är öppen källkod och tillgängligt under [ISC-licensen](https://www.google.com/search?q=LICENSE).
