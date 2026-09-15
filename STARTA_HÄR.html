@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <title>Starta BibelGenerator Offline</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #020617;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+        .card {
+            background: #0f172a;
+            padding: 50px;
+            border-radius: 32px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255,255,255,0.05);
+            max-width: 600px;
+        }
+        h1 { margin-bottom: 15px; font-weight: 900; letter-spacing: -1px; font-size: 2.5em; }
+        p { color: #94a3b8; line-height: 1.6; font-size: 1.1em; }
+        .warning {
+            background: rgba(245, 158, 11, 0.1);
+            border: 1px solid rgba(245, 158, 11, 0.2);
+            padding: 15px;
+            border-radius: 12px;
+            margin: 20px 0;
+            font-size: 0.9em;
+            color: #fbbf24;
+            text-align: left;
+        }
+        .btn {
+            display: block;
+            margin-top: 30px;
+            background: #4f46e5;
+            color: white;
+            text-decoration: none;
+            padding: 18px 40px;
+            border-radius: 16px;
+            font-weight: bold;
+            transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 10px 15px -3px rgba(79, 70, 229, 0.4);
+        }
+        .btn:hover { background: #6366f1; transform: translateY(-2px); box-shadow: 0 20px 25px -5px rgba(79, 70, 229, 0.4); }
+        .steps {
+            text-align: left;
+            margin-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+        }
+        .step { margin-bottom: 10px; font-size: 0.9em; color: #cbd5e1; }
+        .code { background: #000; padding: 2px 6px; border-radius: 4px; font-family: monospace; color: #f472b6; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>BibelGenerator Offline</h1>
+        <p>Vackra bibelbilder – helt lokalt på din dator.</p>
+        
+        <div class="warning">
+            <strong>Viktigt:</strong> Om du bara öppnar index.html direkt kan skärmen bli vit pga. webbläsarens säkerhetsregler.
+        </div>
+
+        <div class="steps">
+            <div class="step">1. 🚀 Kör filen <span class="code">START_WINDOWS.bat</span> för att starta programmet korrekt.</div>
+            <div class="step">2. 📂 När programmet öppnats, klicka på "Välj XML-filer" i sidofältet.</div>
+            <div class="step">3. 📖 Välj din mapp "Översättningar" för att ladda in alla biblar.</div>
+        </div>
+
+        <a href="index.html" class="btn">ÖPPNA MANUELLT (INDEX.HTML)</a>
+        
+        <p style="font-size: 0.8em; margin-top: 20px; opacity: 0.5;">
+            Kräver en modern webbläsare som Chrome eller Edge.
+        </p>
+    </div>
+</body>
+</html>

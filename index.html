@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BibelGenerator Offline</title>
+  
+  <!-- CSS & Fonts -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+  
+  <!-- Babel Standalone (Kompilerar TSX i webbläsaren) -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <script>
+    // Fejka process-objektet för att undvika krascher i externa bibliotek
+    window.process = { env: { NODE_ENV: 'production' } };
+  </script>
+
+  <style>
+    body { font-family: 'Inter', sans-serif; background-color: #020617; color: #f8fafc; margin: 0; overflow-x: hidden; }
+    .font-serif { font-family: 'Playfair+Display', serif; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .spinner { width: 40px; height: 40px; border: 4px solid #1e293b; border-top-color: #6366f1; border-radius: 50%; animation: spin 1s linear infinite; }
+  </style>
+
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@19.0.0",
+    "react/": "https://esm.sh/react@19.0.0/",
+    "react/jsx-runtime": "https://esm.sh/react@19.0.0/jsx-runtime",
+    "react-dom": "https://esm.sh/react-dom@19.0.0",
+    "react-dom/": "https://esm.sh/react-dom@19.0.0/",
+    "react-dom/client": "https://esm.sh/react-dom@19.0.0/client",
+    "lucide-react": "https://esm.sh/lucide-react@0.460.0?external=react"
+  }
+}
+</script>
+</head>
+<body>
+  <div id="root">
+    <div style="display: flex; align-items: center; justify-content: center; height: 100vh; flex-direction: column; gap: 20px;">
+      <div class="spinner"></div>
+      <p style="color: #64748b; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px">Laddar generatorn...</p>
+    </div>
+  </div>
+
+  <script>
+    window.addEventListener('error', function(e) {
+      console.error("Laddningsfel:", e);
+      var root = document.getElementById('root');
+      if (root && root.querySelector('.spinner')) {
+        var msg = e.message || (e.error && e.error.message) || 'Ett oväntat fel uppstod';
+        root.innerHTML = '<div style="padding:40px; text-align:center; max-width:600px; margin:auto; font-family:sans-serif;">' +
+          '<div style="background:#1e1b4b; border:1px solid #ef4444; border-radius:16px; padding:24px; color:#fca5a5;">' +
+            '<h3 style="color:#f87171; font-weight:bold; margin-top:0; font-size:16px;">Kunde inte ladda generatorn</h3>' +
+            '<p style="font-size:12px; font-family:monospace; background:#0f172a; padding:12px; border-radius:8px; white-space:pre-wrap; text-align:left; color:#f8fafc;">' + msg + '</p>' +
+            '<button onclick="location.reload()" style="background:#6366f1; color:white; border:none; padding:10px 20px; border-radius:10px; font-weight:bold; cursor:pointer; margin-top:10px;">Ladda om sidan</button>' +
+          '</div>' +
+        '</div>';
+      }
+    });
+  </script>
+  
+  <script type="text/babel" data-type="module" data-presets="react,typescript" src="index.tsx"></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+
+{
+  "name": "bibelgenerator-offline",
+  "version": "1.0.0",
+  "description": "BibelGenerator Offline - Skapa bilder av bibelord lokalt.",
+  "scripts": {
+    "start": "npx serve .",
+    "build": "node build.js",
+    "lint": "echo 'Inga fel hittades'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

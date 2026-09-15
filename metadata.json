@@ -1,0 +1,5 @@
+{
+  "name": "BibelGenerator Offline",
+  "description": "Skapa vackra bibelordsbilder helt offline med lokala XML-dataset. Inga externa anrop krävs för bibeltexten.",
+  "requestFramePermissions": []
+}
